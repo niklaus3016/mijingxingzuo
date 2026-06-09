@@ -9,6 +9,13 @@ build/
 android/app/build/
 android/.gradle/
 
+# Keystore files (NEVER commit these!)
+*.keystore
+*.jks
+android/keystore.properties
+android/app/*.keystore
+android/app/*.jks
+
 # IDE
 .idea/
 .vscode/
@@ -28,7 +35,6 @@ npm-debug.log*
 .env.local
 
 # Capacitor
-.vscode/
 .platformio/
 
 # Temporary files
