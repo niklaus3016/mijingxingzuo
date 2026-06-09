@@ -37,6 +37,5 @@ npm-debug.log*
 # Capacitor
 .platformio/
 
-# Temporary files
-*.tmp
-*.temp
+# Reference files (not to be committed)
+qitaapp/
