@@ -1,0 +1,6 @@
+{
+  "name": "秘境星座",
+  "description": "一款极简、高品质的离线纯前端星座工具APP。支持公历与农历日期精准换算、12星座星盘精美交互旋转缩放、深度星座人格及运势指南百科、搜索历史缓存及常用星座偏好设置。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
