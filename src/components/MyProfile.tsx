@@ -60,7 +60,6 @@ export default function MyProfile({ settings, onUpdateSettings, onViewConstellat
 
       {/* Common settings category list */}
       <div className="flex flex-col gap-3">
-        <h4 className="text-xs font-bold text-slate-400 tracking-wider uppercase px-1 font-serif">偏好设置</h4>
         
         <div className="flex flex-col rounded-2xl bg-[#11111d]/75 border border-[#d4af37]/10 p-1.5 gap-1.5">
           <div className="flex flex-col rounded-xl overflow-hidden">
