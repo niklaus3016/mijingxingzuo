@@ -39,16 +39,6 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./android/gradlew
 
-    - name: Fix Gradle wrapper (re-download if corrupt or missing)
-      run: |
-        cd android
-        rm -f gradle/wrapper/gradle-wrapper.jar
-        curl -L -o gradle-8.14.3-all.zip https://services.gradle.org/distributions/gradle-8.14.3-all.zip
-        unzip -o gradle-8.14.3-all.zip "gradle-8.14.3/wrapper/gradle-wrapper.jar" -d .
-        cp gradle-8.14.3/wrapper/gradle-wrapper.jar gradle/wrapper/gradle-wrapper.jar
-        rm -rf gradle-8.14.3 gradle-8.14.3-all.zip
-        ls -la gradle/wrapper/
-
     - name: Create keystore file from GitHub Secrets
       run: |
         cd android
