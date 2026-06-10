@@ -6,11 +6,15 @@ import DateQuery from './components/DateQuery';
 import EncyclopediaView from './components/EncyclopediaView';
 import HistoryList from './components/HistoryList';
 import MyProfile from './components/MyProfile';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import { PrivacyModal, AgreementModal, PrivacyPolicyContent, UserAgreementContent, DeclineModal } from './components/PrivacyModal';
 import { Compass, BookOpen, Clock, User, Sparkles, Star } from 'lucide-react';
 
+type PageView = 'main' | 'privacy-policy';
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<'home' | 'encyclopedia' | 'history' | 'my'>('home');
+  const [currentPage, setCurrentPage] = useState<PageView>('main');
   
   // Privacy policy acceptance state
   const [hasAcceptedPrivacy, setHasAcceptedPrivacy] = useState(() => {
@@ -152,6 +156,14 @@ export default function App() {
     setShowAgreementModal(null);
   };
 
+  const handleViewPrivacyPolicy = () => {
+    setCurrentPage('privacy-policy');
+  };
+
+  const handleBackToMain = () => {
+    setCurrentPage('main');
+  };
+
   return (
     <div className="h-screen w-full overflow-hidden flex items-center justify-center p-0 md:p-6 transition-all duration-300 bg-[#050508] md:bg-[#0c0c14]" id="core-application-wrapper">
 
@@ -204,6 +216,16 @@ export default function App() {
           </div>
         </div>
 
+        {/* Privacy Policy Page */}
+        {currentPage === 'privacy-policy' && (
+          <div className="flex-1 overflow-y-auto">
+            <PrivacyPolicyPage onBack={handleBackToMain} />
+          </div>
+        )}
+
+        {/* Main Tab Content */}
+        {currentPage === 'main' && (
+          <>
         {/* Global Floating Header */}
         <header className="px-4 py-3.5 pb-2.5 flex items-center justify-between border-b transition-colors duration-300 border-[#d4af37]/20 text-[#e0e0e0] bg-[#050508]/60 backdrop-blur-md z-10 select-none">
           <div className="flex items-center gap-2">
@@ -296,6 +318,7 @@ export default function App() {
                 settings={settings}
                 onUpdateSettings={handleUpdateSettings}
                 onViewConstellation={handleViewConstellationDirect}
+                onViewPrivacyPolicy={handleViewPrivacyPolicy}
               />
             </div>
           )}
@@ -367,6 +390,7 @@ export default function App() {
           <div className="w-28 h-1 rounded-full bg-slate-800" />
         </div>
 
+        </>
       </div>
         </>
       )}

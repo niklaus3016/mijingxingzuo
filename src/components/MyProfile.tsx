@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CONSTELLATION_LIST } from '../data/constellations';
 import { AppSettings } from '../types';
-import { AgreementModal, PrivacyPolicyContent } from './PrivacyModal';
 import { Info, Shield, Sparkles, RefreshCw, Star } from 'lucide-react';
 
 interface MyProfileProps {
   settings: AppSettings;
   onUpdateSettings: (newSettings: Partial<AppSettings>) => void;
   onViewConstellation: (id: string) => void;
+  onViewPrivacyPolicy: () => void;
 }
 
-export default function MyProfile({ settings, onUpdateSettings, onViewConstellation }: MyProfileProps) {
-  const [showPrivacy, setShowPrivacy] = useState(false);
+export default function MyProfile({ settings, onUpdateSettings, onViewConstellation, onViewPrivacyPolicy }: MyProfileProps) {
 
   const handleMyConstellationChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onUpdateSettings({ myConstellationId: e.target.value });
@@ -66,7 +65,6 @@ export default function MyProfile({ settings, onUpdateSettings, onViewConstellat
         <div className="flex flex-col rounded-2xl bg-[#11111d]/75 border border-[#d4af37]/10 p-1.5 gap-1.5">
           <div className="flex flex-col rounded-xl overflow-hidden">
             <div 
-              onClick={() => setShowPrivacy(true)}
               className="flex items-center justify-between p-2.5 rounded-xl hover:bg-slate-800/10 transition cursor-pointer"
             >
               <div className="flex items-center gap-2.5">
@@ -82,22 +80,13 @@ export default function MyProfile({ settings, onUpdateSettings, onViewConstellat
               <button 
                 onClick={(e) => {
                   e.stopPropagation();
-                  setShowPrivacy(true);
+                  onViewPrivacyPolicy();
                 }}
                 className={`px-3 py-1 text-[10px] font-bold rounded-lg cursor-pointer transition select-none bg-slate-800/80 hover:bg-slate-700 hover:text-white text-slate-300`}
               >
                 详细政策
               </button>
             </div>
-
-            {/* Privacy Policy Modal Portal - uses the same component as login */}
-            {showPrivacy && (
-              <AgreementModal
-                onClose={() => setShowPrivacy(false)}
-                title="隐私政策"
-                content={<PrivacyPolicyContent />}
-              />
-            )}
           </div>
         </div>
       </div>
