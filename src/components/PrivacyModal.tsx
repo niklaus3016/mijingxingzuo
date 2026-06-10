@@ -125,12 +125,12 @@ const UserAgreementContent = () => (
 
 // 协议详情弹窗组件
 const AgreementModal = ({ onClose, title, content }: { onClose: () => void, title: string, content: React.ReactNode }) => (
-  <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 z-[110]">
+  <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-end justify-center z-[110]">
     <motion.div
-      initial={{ scale: 0.95, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0.95, opacity: 0 }}
-      className="bg-[#0c0c14] rounded-[28px] w-full max-w-3xl h-[85vh] overflow-hidden shadow-2xl border border-[#d4af37]/20 flex flex-col"
+      initial={{ scale: 0.95, opacity: 0, y: 100 }}
+      animate={{ scale: 1, opacity: 1, y: 0 }}
+      exit={{ scale: 0.95, opacity: 0, y: 100 }}
+      className="bg-[#0c0c14] rounded-t-[28px] w-full max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl border border-[#d4af37]/20 flex flex-col"
     >
       <div className="flex items-center justify-between px-6 py-5 border-b border-[#d4af37]/20 bg-[#0c0c14] shrink-0">
         <div className="flex items-center gap-3">
