@@ -39,6 +39,12 @@ jobs:
     - name: Make gradlew executable
       run: chmod +x ./android/gradlew
 
+    - name: Fix Gradle wrapper (re-download if corrupt)
+      run: |
+        cd android
+        rm -f gradle/wrapper/gradle-wrapper.jar
+        ./gradlew wrapper --gradle-version 8.14.3 --distribution-type all
+
     - name: Create keystore file from GitHub Secrets
       run: |
         cd android
