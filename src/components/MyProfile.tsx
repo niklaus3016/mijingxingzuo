@@ -106,7 +106,7 @@ export default function MyProfile({ settings, onUpdateSettings, onViewConstellat
             </div>
           </div>
           
-          <p className="text-xs text-slate-300 leading-relaxed text-left text-justify">
+          <p className="text-xs text-slate-300 leading-relaxed text-justify">
             「秘境星座」是一款专门为安卓系统深度适配的星曜小工具。应用本着「极速响应、极简至美」的匠心原则，完整内置中国传统阴阳历和西方星轨算法，尊重并保护用户的隐私安全。
           </p>
 

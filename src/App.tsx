@@ -390,11 +390,10 @@ export default function App() {
           <div className="w-28 h-1 rounded-full bg-slate-800" />
         </div>
 
-        </>
       </div>
-        </>
-      )}
+      </>
+    )}
 
-    </div>
-  );
+  </div>
+);
 }
