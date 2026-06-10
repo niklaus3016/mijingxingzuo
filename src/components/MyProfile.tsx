@@ -1,7 +1,7 @@
 import React from 'react';
 import { CONSTELLATION_LIST } from '../data/constellations';
 import { AppSettings } from '../types';
-import { Info, Shield, Sparkles, RefreshCw, Star } from 'lucide-react';
+import { Shield, Sparkles, RefreshCw, Star } from 'lucide-react';
 
 interface MyProfileProps {
   settings: AppSettings;
@@ -112,16 +112,6 @@ export default function MyProfile({ settings, onUpdateSettings, onViewConstellat
 
           <hr className="border-slate-800/30" />
 
-          <div className="grid grid-cols-2 gap-2 text-[10px] text-slate-400">
-            <div className="flex items-center gap-1.5 pb-1">
-              <Info className="w-3.5 h-3.5 text-[#d4af37]" />
-              <span>零外部网络请求</span>
-            </div>
-            <div className="flex items-center gap-1.5 pb-1">
-              <Shield className="w-3.5 h-3.5 text-[#d4af37]" />
-              <span>零用户隐私上传</span>
-            </div>
-          </div>
         </div>
       </div>
 
