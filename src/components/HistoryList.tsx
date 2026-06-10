@@ -158,7 +158,7 @@ export default function HistoryList({ records, onSelectRecord, onDeleteRecord, o
       {/* Persistence Note */}
       <div className="text-[10px] text-slate-500 text-center flex items-center justify-center gap-1 mt-1 opacity-75">
         <Sparkles className="w-3 h-3 text-[#d4af37]" />
-        <span>查询历史将本地安全缓存，尊重隐私且100%离线可用</span>
+        <span>查询历史将本地安全缓存，尊重隐私保护</span>
       </div>
 
     </div>
