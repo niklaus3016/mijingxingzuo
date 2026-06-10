@@ -35,6 +35,9 @@ jobs:
     
     - name: Set up Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        cmdline-tools-version: 'latest'
+        skip-install-tools: 'true'
     
     - name: Make gradlew executable
       run: chmod +x ./android/gradlew
