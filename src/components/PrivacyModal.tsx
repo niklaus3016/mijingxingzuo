@@ -130,7 +130,7 @@ const AgreementModal = ({ onClose, title, content }: { onClose: () => void, titl
       initial={{ scale: 0.95, opacity: 0, y: 100 }}
       animate={{ scale: 1, opacity: 1, y: 0 }}
       exit={{ scale: 0.95, opacity: 0, y: 100 }}
-      className="bg-[#0c0c14] rounded-t-[28px] w-full max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl border border-[#d4af37]/20 flex flex-col"
+      className="bg-[#0c0c14] rounded-t-[28px] w-full max-w-3xl max-h-[85vh] overflow-hidden shadow-2xl border border-[#d4af37]/20 flex flex-col pt-safe"
     >
       <div className="flex items-center justify-between px-6 py-5 border-b border-[#d4af37]/20 bg-[#0c0c14] shrink-0">
         <div className="flex items-center gap-3">
